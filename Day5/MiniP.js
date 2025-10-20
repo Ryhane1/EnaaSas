@@ -23,7 +23,9 @@ return somme;
  
 function divis (nbr1, nbr2) {
      if (nbr2 == 0) {
-    return NaN; 
+    
+    let nbr2 = Number(prompt("entre numero different a 0 :"));
+    return nbr2
   }
 
 somme = nbr1 / nbr2;
@@ -46,16 +48,11 @@ return somme;
 }
 
 function fact (nbr1) {
-   if (nbr1 < 0) {
-    return NaN; 
-  }
-  console.log(nbr1)
+  
   let resultat = 1;
-  for (let i = 1; i <= nbr1; i++) {
-    resultat = resultat * i;
-    console.log(i)
-console.log(resultat) 
-  }
+  for (let i = 1; i <= nbr1; i++) 
+    resultat *= i ;
+  
   return resultat;
 }
 
@@ -64,7 +61,7 @@ console.log(resultat)
 
 
 
-console.log( "Addition = 1", "Soustraction = 2", "Multiplication = 3", "Division = 4", "Puissance = 5", "Racine carrée = 6", "Factorielle = 7")
+console.log( "Addition = 1", "Soustraction = 2", "Multiplication = 3", "Division = 4", "Puissance = 5", "Racine carrée = 6", "Factorielle = 7" , "Quitter : 8", "Historique : 9")
 
 let opprt = parseInt(prompt ("Entrez le numero de votre opperation : "));
 
@@ -109,7 +106,7 @@ break;
 
     else if  ( opprt >= 6 && opprt <= 7)
 {
-    let nbr1 = parseInt(prompt("Entrez un nombre : "));
+    let nbr1 = Number(prompt("Entrez un nombre : "));
 
     if ( opprt = 6){
       resultat = racin (nbr1) ;
@@ -122,4 +119,14 @@ else if ( opprt = 7){
 
     }    
 }
+
+else if  ( opprt == 8){
+resultat = console.log("Quitter")
+}
+
+
+else if  ( opprt == 9){
+resultat = console.log(Tableau)
+}
+
 console.log(resultat)
