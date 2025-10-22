@@ -96,7 +96,7 @@ case 1 :
 
 case 2 : 
 
-console.log(Ajouter);
+Ajouter;
 break;
 
 case 3 :
@@ -109,7 +109,6 @@ case 4 :
  console.log(Modifier)
  break;
  case 5 : 
-
 
 
 
