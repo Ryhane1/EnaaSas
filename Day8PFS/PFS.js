@@ -147,7 +147,7 @@ for (let i = 0; i < livres.length; i++) {
 
     afficherMenu();
     let choix = prompt("Choisissez une option : ");
-    console.log(); // ligne vide
+    console.log();
 
     if (choix === "1") {
         ajouterLivre();
@@ -163,11 +163,11 @@ for (let i = 0; i < livres.length; i++) {
         dispo();
     } else if (choix === "7") {
         rechercheId();
-    } else if (choix === "0") {
+    } else if (choix === "13") {
         continuer = false;
-        console.log("👋 Fin du programme.");
+        console.log("Fin du programme.");
     } else {
-        console.log("❗ Choix invalide.");
+        console.log("Choix invalide.");
     }
     
 
