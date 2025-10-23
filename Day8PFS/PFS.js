@@ -1,4 +1,4 @@
-const prompt = require("prompt-sync")({ sigint: true });
+const prompt = require("prompt-sync")();
 
 const livres = [
   { idL: 1, titre: "Noces", auteur: "Camus", annee: 1938, disponible: true },
@@ -7,7 +7,8 @@ const livres = [
   { idL: 4, titre: "Gaspard", auteur: "Kehlmann", annee: 2003, disponible: true },
   { idL: 5, titre: "Jonas", auteur: "Lévy", annee: 1997, disponible: false }
 ];
-let idCounter = 5 ;
+let idCounter = 6 ;
+let continuer = true;
 
 function afficherMenu() {
   console.log("\n=== MENU PRINCIPAL ===");
@@ -18,17 +19,11 @@ function afficherMenu() {
   console.log("5. Trier les livres par année de publication");
   console.log("6. Afficher uniquement les livres disponibles");
   console.log("7. Rechercher un livre par ID_livre");
-  console.log("8. Ajouter un abonné");
-  console.log("9. Afficher tous les abonnés");
-  console.log("10. Enregistrer un emprunt");
-  console.log("11. Enregistrer un retour");
-  console.log("12. Afficher les livres empruntés par un abonné");
-  console.log("13. Quitter l'application");
+  console.log("8. Quitter l'application");
 }
 
 
 function ajouterLivre() {
-    let idL = Number(prompt("Entrez l'ID de la livre : "));
     let nvtitre = prompt("Entrez le titre du livre : ");
     let nvauteur = prompt("Entrez la nom d'auteur : ");
     let nvannee = Number(prompt("Entrez l'annee du publication : "));
@@ -40,14 +35,14 @@ function ajouterLivre() {
         annee : nvannee , 
         disponible : true
     };
-    livres[livres.length] = nouvelleLivre;
     idCounter++;
+    livres.push(nouvelleLivre);
     console.log("Livre ajoutée ");
 }
 
 
 function ajouterPlusieursLivres() {
-  let nbLivres = Number(prompt("Combien de livres voulez-vous ajouter ?"));
+  let nbLivres = Number(prompt("Combien de livres voulez-vous ajouter ? : "));
 
   for (let i = 0; i < nbLivres; i++) {
     let nvtitre = prompt("Entrez le titre du livre : ");
@@ -71,7 +66,7 @@ function ajouterPlusieursLivres() {
 function afficherLivres (){
 
     for (let i = 0; i < livres.length; i++) {
-            console.log(`${livres[i].idL}. ${livres[i].titre}. ${livres[i].auteur}. ${livres[i].annee}${livres[i].disponible}`);
+            console.log(`${livres[i].idL}. ${livres[i].titre}. ${livres[i].auteur}. ${livres[i].annee}. ${livres[i].disponible}`);
         }
 }
 
@@ -144,7 +139,7 @@ for (let i = 0; i < livres.length; i++) {
       console.log (livres[i].idL + ". " +livres[i].titre + ". " +livres[i].auteur + ". " +livres[i].annee + " - Disponible : Oui");
 }}}
 
-
+while (continuer){
     afficherMenu();
     let choix = prompt("Choisissez une option : ");
     console.log();
@@ -163,13 +158,13 @@ for (let i = 0; i < livres.length; i++) {
         dispo();
     } else if (choix === "7") {
         rechercheId();
-    } else if (choix === "13") {
+    } else if (choix === "8") {
         continuer = false;
         console.log("Fin du programme.");
     } else {
         console.log("Choix invalide.");
     }
-    
+}
 
 
 

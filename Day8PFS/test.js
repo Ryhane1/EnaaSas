@@ -19,3 +19,18 @@ for (let i = 0; i < livres.length; i++) {
       console.log (livres[i].idL + ". " +livres[i].titre + ". " +livres[i].auteur + ". " +livres[i].annee + " - Disponible : Oui");
 }}}
 rechercheId()
+
+
+
+
+
+
+  console.log("8. Ajouter un abonné");
+  console.log("9. Afficher tous les abonnés");
+  console.log("10. Enregistrer un emprunt");
+  console.log("11. Enregistrer un retour");
+  console.log("12. Afficher les livres empruntés par un abonné");
+      let idL = Number(prompt("Entrez l'ID de la livre : "));
+
+
+      livres[livres.length] = nouvelleLivre;
